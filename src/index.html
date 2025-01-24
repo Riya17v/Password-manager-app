@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Basement GYM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Skranji&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/style.css">
+
+
+</head>
+<style>
+  body {
+    background: url(/gym.jpg)no-repeat center center/cover;
+    /* height:fit-content;
+    overflow: hidden; */
+
+  }
+
+  .Container {
+    display: flex;
+    border-radius: 5px;
+    color: white;
+
+  }
+
+  /* #Navbar::before{
+      content: "";
+      position: absolute;
+      background-color: black;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      opacity: 1.0;
+
+    } */
+  #Navbar {
+    display: flex;
+    position: fixed;
+    mix-blend-mode: screen;
+    background-color: rgb(36, 56, 56);
+    margin: 3px;
+    padding: 10px;
+    height: 2.5rem;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  #Navbar ul {
+    display: flex;
+    list-style: none;
+
+  }
+
+  #Navbar ul li a {
+    margin: 1.3rem;
+    padding: 4px;
+    cursor: pointer;
+    color: white;
+    font-size: 1.3rem;
+    text-decoration: none;
+    list-style: none;
+
+  }
+
+  #Navbar ul li a:hover {
+    /* background-color: rgb(176, 220, 194); */
+    /* border: 2px solid white; */
+    /* border-radius: 18px; */
+    /* box-shadow: 13px blur rgb(28, 202, 101) ; */
+    /* margin: 2px; */
+    /* padding: 10px; */
+    color: rgb(0, 0, 0);
+
+  }
+
+  .heading h2 {
+    margin-top: 6rem;
+    padding: 8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    text-align: center;
+
+  }
+
+  #sec {
+    display: flex;
+    color: white;
+    padding: 2rem;
+  }
+
+  .main {
+    margin: 8px;
+  }
+
+  .main span:hover {
+    cursor: pointer;
+    color: rgb(255, 192, 192);
+    font-size: 1.2em;
+
+  }
+
+  .aside img {
+    height: 350px;
+    width: 350px;
+    border-radius: 25px;
+    cursor: pointer;
+    opacity: 1;
+
+  }
+
+  .aside img:hover {
+    width: 500px;
+
+  }
+
+  .btn {
+
+    text-align: center;
+    border: 2px solid black;
+    margin-left: 25em;
+    border-radius: 15px;
+    width: 8em;
+    height: 2.6em;
+    margin-top: 4rem;
+    font-weight: bold;
+    background-color: aqua;
+    cursor: pointer;
+  }
+</style>
+
+<body>
+  <div id="root"></div>
+  <!-- <script type="module" src="/src/main.jsx"></script> -->
+
+  <nav class="Container">
+    <div id="Navbar">
+      <h1>The Basement GYM</h1>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="heading">
+    <h2>Get your personalized GYM</h2>
+  </div>
+  <section id="sec">
+    <main>
+      <div class="main">
+        <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore impedit id quae animi excepturi
+          praesentium,
+          ad esse nu Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ea voluptates molestias non atque
+          alias nostrum expedita, cumque repellat nesciunt, modi, inventore harum quis est. Neque voluptatem quod iste
+          molestias. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, quaerat dolores reprehenderit
+          ipsam nihil odit vel officiis! Obcaecati officia, aliquam labore non amet asperiores, perferendis ducimus
+          temporibus iste tempora ipsum?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis ipsum rem quod
+          placeat facere tenetur asperiores ducimus nostrum. Temporibus tempora sint, sit asperiores eum corrupti
+          doloribus odit alias eveniet aliquam!Lorem</span>
+
+      </div>
+      <button id="myButton" class="btn" onclick="changeBackgroundColor()">Join Now</button>
+
+    </main>
+
+    <aside>
+      <div class="aside">
+        <img src="/gym1.jpg" alt="image1" srcset="no-repeat center center/cover">
+      </div>
+    </aside>
+  </section>
+
+  <!-- <button class="btn">Join Now</button> -->
+  <script>
+    function changeBackgroundColor() {
+      const button = document.getElementById('myButton');
+      // Set a  background color for the button
+      button.style.backgroundColor = '#326767';
+      button.style.color = 'white';
+    }
+  </script>
+
+  <h1 style="color: white;">Fetch Api Example</h1>
+  <div id="post-container" style="color: white;">
+    <p>Post Loading..</p>
+  </div>
+
+  <script src="script.js"></script>
+  <!-- <div class="container2">
+    <h1>Join the best gym of city now</h1>
+    <form id="gymForm" >
+        <div class="form-group">
+            <input type="text" id="name" name="" placeholder="Enter your Name">
+            <div class="error" id="nameError"></div>
+        </div>
+        <div class="form-group">
+            <input type="text" id="age" name="" placeholder="Enter your Age">
+            <div class="error" id="ageError"></div>
+        </div>
+        <div class="form-group">
+            <input type="text" id="gender" name="" placeholder="Enter your Gender">
+            <div class="error" id="genderError"></div>
+        </div>
+        <div class="form-group">
+            <input type="text" id="locality" name="" placeholder="Enter your Locality">
+            <div class="error" id="localityError"></div>
+        </div>
+        <button class="btn2">submit</button>
+        <div id="formSuccess" class="success"></div>
+    </form>
+
+</div> -->
+<div class="container2">
+  <h1>Join the best gym of city now</h1>
+  <form id="gymForm" action="noaction.php">
+    <div class="form-group">
+      <input type="text" id="name" placeholder="Enter your Name">
+      <div id="nameError" class="error"></div>
+    </div>
+    <div class="form-group">
+      <input type="text" id="age" placeholder="Enter your Age">
+      <div id="ageError" class="error"></div>
+    </div>
+    <div class="form-group">
+      <input type="text" id="gender" placeholder="Enter your Gender">
+      <div id="genderError" class="error"></div>
+    </div>
+    <div class="form-group">
+      <input type="text" id="locality" placeholder="Enter your Locality">
+      <div id="localityError" class="error"></div>
+    </div>
+    <button type="submit" class="btn2">Submit</button>
+    <div id="formSuccess" class="success"></div>
+  </form>
+</div>
+
+</body>
+
+</html>
