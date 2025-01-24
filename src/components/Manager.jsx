@@ -13,7 +13,7 @@ const Manager = () => {
     const [passwordArray, setpasswordArray] = useState([])
 
     const getPassword = async ()=>{
-        const req = await fetch("http://localhost:3000/")
+        const req = await fetch("http://127.0.0.1:8000/")
         const passwords = await req.json()        
         setpasswordArray(passwords)
         console.log(passwords);
@@ -41,10 +41,10 @@ const Manager = () => {
         if (Form.site.length > 3 && Form.username.length > 3 && Form.password.length > 3) {
 
            // if any such id exists in the db , delete it 
-            await fetch("http://localhost:3000/",{method:"DELETE" , headers:{"Content-Type":"application/json"}, body: JSON.stringify({...Form, id: Form.id })})
+            await fetch("http://localhost:8000/",{method:"DELETE" , headers:{"Content-Type":"application/json"}, body: JSON.stringify({...Form, id: Form.id })})
             
             setpasswordArray([...passwordArray, { ...Form, id: uuidv4() }])
-             await fetch("http://localhost:3000/",{method:"POST" , headers:{"Content-Type":"application/json"}, body: JSON.stringify({ ...Form, id: uuidv4() }) })
+             await fetch("http://localhost:8000/",{method:"POST" , headers:{"Content-Type":"application/json"}, body: JSON.stringify({ ...Form, id: uuidv4() }) })
                    
 
             // localStorage.setItem("password", JSON.stringify([...passwordArray, { ...Form, id: uuidv4() }]))
@@ -69,7 +69,7 @@ const Manager = () => {
         if (con) {
 
             setpasswordArray(passwordArray.filter(item => item.id !== id))
-           let res = await fetch("http://localhost:3000/",{method:"DELETE" , headers:{"content-Type":"application/json"}, body: JSON.stringify({ id })})
+           let res = await fetch("http://localhost:8000/",{method:"DELETE" , headers:{"content-Type":"application/json"}, body: JSON.stringify({ id })})
                    
 
             // localStorage.setItem("password", JSON.stringify(passwordArray.filter(item => item.id !== id)))
@@ -217,11 +217,14 @@ const Manager = () => {
                                                 <span onClick={() => { editPassword(item.id) }}>
                                                     <img src="/edit.png" alt="edit" width={"25"} height={"25"} />
                                                 </span>
-                                                <span onClick={() => { deletePassword(item.id) }}><lord-icon
-                                                    src="https://cdn.lordicon.com/skkahier.json"
+                                                {/* <span onClick={() => { deletePassword(item.id) }}><lord-icon
+                                                    src="/delete.png"
                                                     trigger="hover"
                                                     style={{ "width": "25px", "height": "25px" }}>
-                                                </lord-icon></span>
+                                                </lord-icon></span> */}
+                                                 <span onClick={() => { deletePassword(item.id) }}>
+                                                    <img src="/delete.png" alt="delete" width={"25"} height={"25"} />
+                                                </span>
 
 
                                             </div>
